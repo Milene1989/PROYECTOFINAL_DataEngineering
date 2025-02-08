@@ -48,7 +48,9 @@ Este archivo hace lo siguiente:
 
 # Resumen Final
 1.- Batch → Se usa Alpha Vantage para obtener precios de acciones cada 24 horas.
+
 2.- Near real-time → Se genera logs financieros simulados con Python y Kafka.
+
 3.- Logstash → Procesa ambos flujos y envía los datos a Elasticsearch.
 
 
