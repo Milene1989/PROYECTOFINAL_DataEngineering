@@ -18,14 +18,10 @@ Este script usará la API de Alpha Vantage para obtener el precio histórico de 
 ¿Cómo funciona?
 - Consulta los precios de las acciones en la API.
 - Extrae los valores clave (fecha, apertura, cierre, volumen).
-- Guarda los datos en un archivo csv:
-# Datos_financieros.csv
-el cual es usado en el flujo batch.
+- Guarda los datos en un archivo csv: "Datos_financieros.csv", el cual es usado en el flujo batch.
 * Este CSV se lee con Logstash y se envía a Elasticsearch para su análisis.
 
-- También se genera un archivo con logs:
-# extraccion_finanzas.log
-el cual permite ver los registros de los datos extraídos de la API.
+- También se genera un archivo con logs: "extraccion_finanzas.log", el cual permite ver los registros de los datos extraídos de la API.
 
 # 2.- Script para flujo NRT - Logs de transacciones financieras
 Este script genera logs simulados de transacciones en NRT, como si fueran de un sistema de trading.
