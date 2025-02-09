@@ -18,7 +18,12 @@ Este script usará la API de Alpha Vantage para obtener el precio histórico de 
 ¿Cómo funciona?
 - Consulta los precios de las acciones en la API.
 - Extrae los valores clave (fecha, apertura, cierre, volumen).
-- Guarda los datos en un archivo csv: "Datos_financieros.csv", el cual es usado en el flujo batch. Este CSV se lee con Logstash y se envía a Elasticsearch para su análisis.
+- Guarda los datos en un archivo csv: "Datos_financieros.csv", el cual es usado en el flujo batch. El script se ejecuta cada 24 horas, lo cual se consiguió mediante el comando cron:
+
+crontab -e
+0 0 * * * /usr/bin/python3 /Users/milene/Desktop/MAESTRIA\ CIENCIA\ DE\ DATOS/7.\ INGENIERIA\ DE\ DATOS/PROYECTO\ FINAL/API_a_CSV. py
+
+- El CSV generado se lee con Logstash y se envía a Elasticsearch para su análisis.  
 - También se genera un archivo con logs: "extraccion_finanzas.log", el cual permite ver los registros de los datos extraídos de la API.
 
 # 2.- Script para flujo NRT - Logs de transacciones financieras
